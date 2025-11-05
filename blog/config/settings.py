@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-96=va%#81@(4f3)sfm62vjx!g+68($#yg$3ax5et$986p9%lo#'
+SECRET_KEY = 'django-insecure-+cdbd2=+4ucw!elsnhh6&$#fjomm4xb27v50*rao&ms&$j)@c='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
 
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -40,14 +39,15 @@ DJANGO_APPS = [
 ]
 
 OWN_APPS = [
-    'bookmark',
+    'blog',
+    'member',
 ]
 
 THIRD_PARTY_APPS = [
     'django_extensions',
 ]
 
-
+# Application definition
 INSTALLED_APPS = DJANGO_APPS + OWN_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'ko-KR'
+LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -131,3 +131,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# login
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
