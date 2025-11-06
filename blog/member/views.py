@@ -36,9 +36,19 @@ def login(request):
     form = AuthenticationForm(request, request.POST or None)
     if form.is_valid():
         django_login(request, form.get_user())
+
+        # 추가
+        next = request.GET.get('next')
+        if next:
+            return redirect(next)
+
         return redirect(reverse('blog_list'))
+
+    else:
+        form = AuthenticationForm(request)
 
     context = {
         'form': form
     }
+
     return render(request, 'registration/login.html', context)
