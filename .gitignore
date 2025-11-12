@@ -407,3 +407,7 @@ pyrightconfig.json
 /blog/.idea
 /blog/.python-version
 .python-version
+
+
+blog/
+blog/*
